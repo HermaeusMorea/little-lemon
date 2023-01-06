@@ -1,6 +1,6 @@
 import React from 'react';
 import LittlelemonIntro from './LittlelemonIntro';
-import ReservationButton from './ReservationButton';
+import StyledButton from './StyledButton';
 import pic from './source/ReservationPic.jpg';
 import './ReservationCard.css';
 
@@ -9,7 +9,7 @@ function ReservationCard() {
     <div className="reservation-card">
       <div className="left">
         <LittlelemonIntro />
-        <ReservationButton />
+        <StyledButton name='Reserve a table' width='220px' height="67px"/>
       </div>
       <div className="right">
         <img alt="ResPic" src={pic} />

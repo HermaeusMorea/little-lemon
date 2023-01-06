@@ -13,7 +13,6 @@ function App() {
       <Main/>
       <Header/>
       <Footer/>
-    </div>
-    ); 
+    </div>); 
 }
 export default App;

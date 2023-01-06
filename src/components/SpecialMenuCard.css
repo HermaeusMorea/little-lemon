@@ -1,0 +1,46 @@
+.ContentOfTheSpecialMenuCard {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); 
+    margin: 70px 70px 70px 70px; /* top, right, bottom, left */
+
+  }
+.ContentOfTheSpecialMenuCard_First{
+    grid-column: 1/2;
+    place-self: center;
+}
+
+.ContentOfTheSpecialMenuCard_Second{
+    grid-column: 2/3;
+    place-self: center;
+}
+
+.ContentOfTheSpecialMenuCard_Third {
+    grid-column: 3/3;
+    place-self: center;
+}
+
+.titleOfTheSpecialMenuCard {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); 
+  margin: 70px 70px 70px 70px; 
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
+  padding: 10px;
+  white-space: nowrap;
+}
+
+.titleOfTheSpecialMenuCard_left {
+    grid-column: 1/2; 
+  text-align: left;
+  font-family: 'Markazi Text';
+font-style: normal;
+font-weight: 400;
+font-size: 40px;
+place-self: center;
+}
+
+.titleOfTheSpecialMenuCard_right {
+    grid-column: 3/3;
+  text-align: right;
+  place-self: center;
+}
