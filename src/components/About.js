@@ -1,15 +1,13 @@
 import React from 'react';
 import LittlelemonIntro from './LittlelemonIntro';
-import StyledButton from './StyledButton';
-import pic from './source/ReservationPic.jpg';
-import './Header.css';
+import pic from './source/Logo3.jpg';
+import './About.css';
 
-function Header() {
+function About() {
   return (
     <div className="reservation-card">
       <div className="left">
         <LittlelemonIntro />
-        <StyledButton name='Reserve a table' width='220px' height="67px"/>
       </div>
       <div className="right">
         <img alt="ResPic" src={pic} />
@@ -18,4 +16,4 @@ function Header() {
   );
 }
 
-export default Header;
+export default About;

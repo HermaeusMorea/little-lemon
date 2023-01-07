@@ -1,5 +1,5 @@
 .Testimonial{
-    background-color:#4B5E58 ;
+    background-color:#edefee ;
 }
 
 .ContentOfTestimonials {
@@ -37,6 +37,6 @@
   font-style: normal;
   font-weight: 400;
   font-size: 40px;
-  color: aliceblue;
+  color: rgb(0, 0, 0);
   place-content: bottom;
 }
