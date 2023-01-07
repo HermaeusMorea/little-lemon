@@ -1,0 +1,42 @@
+.Testimonial{
+    background-color:#4B5E58 ;
+}
+
+.ContentOfTestimonials {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); 
+    margin: 70px 70px 70px 70px; /* top, right, bottom, left */
+  }
+.CContentOfTestimonials_First{
+    grid-column: 1;
+    place-self: center;
+}
+
+.ContentOfTestimonials_Second{
+    grid-column: 2;
+    place-self: center;
+}
+
+.ContentOfTestimonials_Third {
+    grid-column: 3;
+    place-self: center;
+}
+
+.ContentOfTestimonials_Fourth {
+    grid-column: 4;
+    place-self: center;
+}
+
+.titleOfTestimonials {
+  display: grid;
+  grid-template-columns: repeat(1, 1fr); 
+  margin: 70px 70px 70px 70px; 
+  padding: 10px;
+  white-space: nowrap;
+  text-align: center;
+  font-family: 'Markazi Text';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 40px;
+  color: aliceblue;
+}

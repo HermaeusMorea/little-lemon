@@ -11,6 +11,7 @@
     transition: transform 0.2s ease-in-out;
     cursor: pointer;
     background-color: #C4C4C4;
+    margin-bottom: 20px;
   }
 .food-card:hover {
     transform: scale(1.1);

@@ -1,7 +1,9 @@
+
+
 .ContentOfTheSpecialMenuCard {
     display: grid;
     grid-template-columns: repeat(3, 1fr); 
-    margin: 70px 70px 70px 70px; /* top, right, bottom, left */
+    margin: 0 0 70px 70px; /* top, right, bottom, left */
 
   }
 .ContentOfTheSpecialMenuCard_First{
@@ -22,7 +24,7 @@
 .titleOfTheSpecialMenuCard {
   display: grid;
   grid-template-columns: repeat(3, 1fr); 
-  margin: 70px 70px 70px 70px; 
+  margin: 0px 0px 70px 70px; 
   font-family: 'Montserrat', sans-serif;
   font-weight: 700;
   padding: 10px;
@@ -30,9 +32,9 @@
 }
 
 .titleOfTheSpecialMenuCard_left {
-    grid-column: 1/2; 
-  text-align: left;
-  font-family: 'Markazi Text';
+grid-column: 1/2; 
+text-align: left;
+font-family: 'Markazi Text';
 font-style: normal;
 font-weight: 400;
 font-size: 40px;
