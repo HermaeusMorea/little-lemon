@@ -14,7 +14,7 @@ function TestimonialsCard() {
             customer={{
               photo: photo,
               name: 'miku',
-              rating: 5,
+              rating: 8,
               review: 'I had a great experience at this restaurant! The food was delicious and the service was top-notch.'
             }}
           />
@@ -24,7 +24,7 @@ function TestimonialsCard() {
             customer={{
               photo: photo ,
               name: 'miku',
-              rating: 5,
+              rating: 8,
               review: 'I had a great experience at this restaurant! The food was delicious and the service was top-notch.'
             }}
           />
@@ -34,7 +34,7 @@ function TestimonialsCard() {
             customer={{
               photo: photo,
               name: 'miku',
-              rating: 5,
+              rating: 8,
               review: 'I had a great experience at this restaurant! The food was delicious and the service was top-notch.'
             }}
           />
@@ -44,7 +44,7 @@ function TestimonialsCard() {
             customer={{
               photo: photo,
               name: 'miku',
-              rating: 5,
+              rating: 8,
               review: 'I had a great experience at this restaurant! The food was delicious and the service was top-notch.'
             }}
           />

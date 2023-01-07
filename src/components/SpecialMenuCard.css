@@ -1,48 +1,41 @@
-
-
 .ContentOfTheSpecialMenuCard {
     display: grid;
-    grid-template-columns: repeat(3, 1fr); 
-    margin: 0 0 70px 70px; /* top, right, bottom, left */
-
+    grid-template-columns: repeat(12, 1fr); 
   }
 .ContentOfTheSpecialMenuCard_First{
-    grid-column: 1/2;
-    place-self: center;
+    grid-column: 3/4;
+    place-self: left;
 }
 
 .ContentOfTheSpecialMenuCard_Second{
-    grid-column: 2/3;
+    grid-column: 4/8;
     place-self: center;
 }
 
 .ContentOfTheSpecialMenuCard_Third {
-    grid-column: 3/3;
-    place-self: center;
+    grid-column: 8/10;
+    place-self: right;
 }
 
 .titleOfTheSpecialMenuCard {
   display: grid;
-  grid-template-columns: repeat(3, 1fr); 
-  margin: 0px 0px 70px 70px; 
+  grid-template-columns: repeat(12, 1fr); 
+  margin: 20px 0px 15px 0px; 
   font-family: 'Montserrat', sans-serif;
   font-weight: 700;
-  padding: 10px;
   white-space: nowrap;
 }
 
 .titleOfTheSpecialMenuCard_left {
-grid-column: 1/2; 
-text-align: left;
+grid-column: 3; 
 font-family: 'Markazi Text';
 font-style: normal;
 font-weight: 400;
 font-size: 40px;
-place-self: center;
+place-self: left;
 }
 
 .titleOfTheSpecialMenuCard_right {
-    grid-column: 3/3;
-  text-align: right;
-  place-self: center;
+  grid-column: 8/11;
+  place-self: right;
 }

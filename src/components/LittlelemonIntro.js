@@ -8,7 +8,6 @@ function LittlelemonIntro() {
         fontSize: '64px',
         lineHeight: '77px',
         color: '#F4CE14',
-        'white-space':'nowrap',
     }
     const h2Style={
         fontFamily: "'Markazi Text'",
