@@ -1,0 +1,60 @@
+.grid {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  background-color: #495E57;
+  color: white;
+  padding: 20px;
+}
+
+.grid > div {
+  padding: 10px;
+}
+
+.grid label {
+  grid-column: 1 / span 2;
+}
+
+.grid .date {
+  grid-column: 3/ span 2;
+}
+.grid .time {
+    grid-column: 5 / span 2;
+  }
+  .grid .guests {
+    grid-column: 7 / span 2;
+  }
+
+.grid .table {
+  grid-column: 9 / span 2;
+}
+
+.grid select,input{
+    border-radius: 20px;
+    padding: 5px;
+    margin: 5px;
+}
+.grid button {
+  grid-column: 6 / span 2;
+  margin: 10px;
+  background-Color: #F4CE14;
+    color: black;
+font-Size: 18px;
+    border-radius: 20px;
+}
+
+.grid .error {
+  grid-column: 3 / span 2;
+  color: red;
+  font-size: 14px;
+}
+
+.grid .FirstName {
+    grid-column: 3/ span 2;
+  }
+
+  .grid .LastName {
+    grid-column: 5/ span 2;
+  }
+  .grid .Phone {
+    grid-column: 7/ span 2;
+  }

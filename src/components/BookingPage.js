@@ -1,9 +1,14 @@
 import React from 'react';
-import ContactForm from './ContactForm';
+import ShowReservedTables from './ShowReservedTables';
+import { TablesProvider } from './TablesContext';
+import FormikForm from './ChoosingTable';
 function BookingPage(props){
     return(
     <div>
-        <ContactForm/>
+        <TablesProvider>
+      <ShowReservedTables />
+        <FormikForm/>
+        </TablesProvider>
     </div>
    )
 }
