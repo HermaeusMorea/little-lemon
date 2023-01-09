@@ -14,8 +14,6 @@ function Footer() {
           <li><a href="/about">About</a></li>
           <li><a href="/menu">menu</a></li>
           <li><a href="/reservation">Resercation</a></li>
-          <li><a href="/order">Order online</a></li>
-          <li><a href="/login">Login</a></li>
         </ul>
       </div>
       <div className='Contact'>
@@ -29,7 +27,7 @@ function Footer() {
         </ul>
       </div>
       <div className='SocialMedia'>
-        <h1>
+        <h1 className='SocialMedia'>
           Social Media
         </h1>
         <ul>

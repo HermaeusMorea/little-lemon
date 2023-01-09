@@ -20,7 +20,7 @@ function TableFilter(props) {
       phoneNumber: Yup.string().required('Required').matches(/^\d{10}$/, 'Must be a valid phone number'),
     }),
     onSubmit: values => {
-      alert(`Table ${table} Reservation Succeeded!`);
+      alert(`Reservation Succeeded!`);
     },
   });
 

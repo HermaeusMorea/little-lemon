@@ -7,7 +7,7 @@ import Food3 from './source/Food3.png'
 import './SpecialMenuCard.css'
 function SpecialMenuCard() {
   return (
-    <div className='specialMenucard'>
+    <div className='SpecialMenuCard'>
       <div className='titleOfTheSpecialMenuCard'>
         <div className='titleOfTheSpecialMenuCard_left'>This Weeks Special:</div>
         <div className='titleOfTheSpecialMenuCard_right'><StyledButton name="Online Menu" width='200px' height='43px'/></div>

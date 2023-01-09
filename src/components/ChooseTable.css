@@ -5,7 +5,7 @@
 }
 
 .Title {
-  color: white;
+  color: rgb(255, 255, 255);
   font-family: 'Markazi Text';
   font-style: normal;
   font-weight: 400;
@@ -16,7 +16,7 @@
   place-self: left;
 }
 h1{
-    color: white;
+    color: rgb(255, 255, 255);
   font-family: 'Markazi Text';
   font-style: normal;
   font-weight: 400;
@@ -52,9 +52,10 @@ h1{
 }
 button {
   background-color: #4CAF50; /* Green */
-  border: none;
-  color: white;
+  border-radius: 20px;
+  color: rgb(0, 0, 0);
   padding: 15px 32px;
+  margin: 20px 0 20px 0;
   text-align: center;
   text-decoration: none;
   display: inline-block;
@@ -70,7 +71,7 @@ textarea {
   border-radius: 4px;
 }
 label {
-  color: white;
+  color: rgb(255, 255, 255);
   font-family: 'Markazi Text';
   font-style: normal;
   font-weight: 400;
@@ -86,6 +87,6 @@ select {
   border: 2px solid #ccc;
   border-radius: 4px;
   appearance: none;
-  background-color: white;
-  color: #495E57;
+  background-color: rgb(255, 255, 255);
+  color: #000000;
 }
