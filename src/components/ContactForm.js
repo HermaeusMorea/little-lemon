@@ -1,5 +1,6 @@
 import { useFormik } from 'formik';
 import * as Yup from 'yup';
+import './ContactForm'
 
 function ContactForm() {
   const formik = useFormik({
@@ -7,13 +8,11 @@ function ContactForm() {
       firstName: '',
       lastName: '',
       phoneNumber: '',
-      additionalInfo: '',
     },
     validationSchema: Yup.object({
       firstName: Yup.string().required('Required'),
       lastName: Yup.string().required('Required'),
       phoneNumber: Yup.string().required('Required').matches(/^\d{10}$/, 'Must be a valid phone number'),
-      additionalInfo: Yup.string(),
     }),
     onSubmit: values => {
       alert('Reservation Succeeded!');
@@ -21,6 +20,7 @@ function ContactForm() {
   });
 
   return (
+    <div className='Contact'>
     <form onSubmit={formik.handleSubmit}>
       <h1>How may we contact you?</h1>
       <label htmlFor="firstName">First Name</label>
@@ -53,16 +53,9 @@ function ContactForm() {
      value={formik.values.phoneNumber}
    />
 {formik.errors.phoneNumber && formik.touched.phoneNumber ? <div>{formik.errors.phoneNumber}</div> : null}
-<label htmlFor="additionalInfo">Additional Information</label>
-<textarea
-     id="additionalInfo"
-     name="additionalInfo"
-     onChange={formik.handleChange}
-     value={formik.values.additionalInfo}
-   />
-{formik.errors.additionalInfo && formik.touched.additionalInfo ? <div>{formik.errors.additionalInfo}</div> : null}
 <button type="submit">Submit</button>
 </form>
+</div>
 );
 };
 
