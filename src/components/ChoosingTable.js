@@ -48,17 +48,10 @@ const timeOptions = [
       phoneNumber: Yup.string().required('Required').matches(/^\d{10}$/, 'Must be a valid phone number'),
     }),
     onSubmit: (values,) => {
-      const exists = tables.some(table => table.id === `${values.table}${values.date}${values.time}`);
-      if (!exists) {
         setTables([...tables, { id: `${values.table}${values.date}${values.time}`, tablenumber: values.table, date: values.date, time: values.time }]);
         formik.setSubmitting(false);
         alert("Reservation Succeed");
         formik.resetForm();
-      }
-      else {
-        alert("Already Reserved!");
-        formik.setSubmitting(false);
-      }
     },
   });
 
