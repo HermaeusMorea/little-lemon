@@ -13,20 +13,21 @@ const FormikForm = () => {
     { value: 5, label: 'Table 5' },
   ];
 
-  const timeOptions = [
-    { value: '17:00', label: '17:00' },
-    { value: '18:00', label: '18:00' },
-    { value: '19:00', label: '19:00' },
-    { value: '20:00', label: '20:00' },
-    { value: '21:00', label: '21:00' },
-    { value: '22:00', label: '22:00' },
-  ];
+
+const timeOptions = [
+  { value: '17:00', label: '17:00' },
+  { value: '18:00', label: '18:00' },
+  { value: '19:00', label: '19:00' },
+  { value: '20:00', label: '20:00' },
+  { value: '21:00', label: '21:00' },
+  { value: '22:00', label: '22:00' },
+];
 
 
   const formik = useFormik({
     initialValues: {
-      date: '2023-01-01',
-      time: '17:00',
+      date: '',
+      time: 'select',
       guests: 1,
       table: 1,
       firstName: '',
@@ -35,7 +36,11 @@ const FormikForm = () => {
     },
     validationSchema: Yup.object({
       date: Yup.date().required('Required'),
-      time: Yup.string().required('Required'),
+      time: Yup.string()
+    .required('Required')
+    .test('time', 'Please select a valid time', function (value) {
+      return value !== 'select';
+    }),
       guests: Yup.number().required('Required').min(1).max(10),
       table: Yup.string().required('Required'),
       firstName: Yup.string().required('Required'),
@@ -48,6 +53,7 @@ const FormikForm = () => {
         setTables([...tables, { id: `${values.table}${values.date}${values.time}`, tablenumber: values.table, date: values.date, time: values.time }]);
         formik.setSubmitting(false);
         alert("Reservation Succeed");
+        formik.resetForm();
       }
       else {
         alert("Already Reserved!");
@@ -67,6 +73,9 @@ const FormikForm = () => {
 
       <label htmlFor="time" className='time'>Time:
         <select {...formik.getFieldProps('time')}>
+        <option key="select" value="select">
+                select
+        </option>
           {timeOptions
             .filter((option) => {
               const exists = tables.some(table => table.id === `${formik.values.table}${formik.values.date}${option.value}`);
@@ -76,7 +85,6 @@ const FormikForm = () => {
                 return false;
               }
             })
-
             .map((option) => (
               <option key={option.value} value={option.value}>
                 {option.label}
