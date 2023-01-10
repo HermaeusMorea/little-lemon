@@ -13,6 +13,16 @@ const FormikForm = () => {
     { value: 5, label: 'Table 5' },
   ];
 
+  const timeOptions = [
+    { value: '17:00', label: '17:00' },
+    { value: '18:00', label: '18:00' },
+    { value: '19:00', label: '19:00' },
+    { value: '20:00', label: '20:00' },
+    { value: '21:00', label: '21:00' },
+    { value: '22:00', label: '22:00' },
+  ];
+
+
   const formik = useFormik({
     initialValues: {
       date: '2023-01-01',
@@ -57,12 +67,20 @@ const FormikForm = () => {
 
       <label htmlFor="time" className='time'>Time:
         <select {...formik.getFieldProps('time')}>
-          <option value="17:00">17:00</option>
-          <option value="18:00">18:00</option>
-          <option value="19:00">19:00</option>
-          <option value="20:00">20:00</option>
-          <option value="21:00">21:00</option>
-          <option value="22:00">22:00</option>
+          {timeOptions
+            .filter((option) => {
+              const exists = tables.some(table => table.id === `${formik.values.table}${formik.values.date}${option.value}`);
+              if (!exists) {
+                return true;
+              } else {
+                return false;
+              }
+            })
+
+            .map((option) => (
+              <option key={option.value} value={option.value}>
+                {option.label}
+              </option>))}
         </select>
         {formik.touched.time && formik.errors.time ? (
           <div>{formik.errors.time}</div>
@@ -92,35 +110,35 @@ const FormikForm = () => {
 
       <h2>How may we contact you?</h2>
       <label htmlFor="firstName" className='FirstName'>First Name
-      <input
-        id="firstName"
-        name="firstName"
-        type="text"
-        onChange={formik.handleChange}
-        value={formik.values.firstName}
-      />
+        <input
+          id="firstName"
+          name="firstName"
+          type="text"
+          onChange={formik.handleChange}
+          value={formik.values.firstName}
+        />
       </label>
-      {formik.errors.firstName && formik.touched.firstName ? <div>{formik.errors.firstName}</div> : null}
+      {formik.errors.firstName && formik.touched.firstName ? <div className='FnameErr'>{formik.errors.firstName}</div> : null}
       <label htmlFor="lastName" className='LastName'>Last Name
-      <input
-        id="lastName"
-        name="lastName"
-        type="text"
-        onChange={formik.handleChange}
-        value={formik.values.lastName
-        }
-      />
+        <input
+          id="lastName"
+          name="lastName"
+          type="text"
+          onChange={formik.handleChange}
+          value={formik.values.lastName
+          }
+        />
       </label>
-      {formik.errors.lastName && formik.touched.lastName ? <div>{formik.errors.lastName}</div> : null}
+      {formik.errors.lastName && formik.touched.lastName ? <div className='LnameErr'>{formik.errors.lastName}</div> : null}
       <label htmlFor="phoneNumber" className='Phone'>Phone Number
-      <input
-        id="phoneNumber"
-        name="phoneNumber"
-        type="text"
-        onChange={formik.handleChange}
-        value={formik.values.phoneNumber}
-      />
-      {formik.errors.phoneNumber && formik.touched.phoneNumber ? <div>{formik.errors.phoneNumber}</div> : null}
+        <input
+          id="phoneNumber"
+          name="phoneNumber"
+          type="text"
+          onChange={formik.handleChange}
+          value={formik.values.phoneNumber}
+        />
+        {formik.errors.phoneNumber && formik.touched.phoneNumber ? <div className='PhoneErr'>{formik.errors.phoneNumber}</div> : null}
       </label>
       <button type="submit" disabled={formik.isSubmitting}>
         Submit
