@@ -1,6 +1,6 @@
 import React from 'react';
 import ShowReservedTables from './ShowReservedTables';
-import FormikForm from './ChoosingTable';
+import FormikForm from './FormikForm';
 function BookingPage(props){
     return(
     <div>

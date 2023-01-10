@@ -2,7 +2,7 @@ import { useFormik } from 'formik';
 import * as Yup from 'yup';
 import { TablesContext } from './TablesContext';
 import { useContext } from 'react';
-import './ChoosingTable.css'
+import './FormikForm.css'
 const FormikForm = () => {
   const { tables, setTables } = useContext(TablesContext);
   const tableOptions = [
@@ -50,22 +50,22 @@ const timeOptions = [
     onSubmit: (values,) => {
         setTables([...tables, { id: `${values.table}${values.date}${values.time}`, tablenumber: values.table, date: values.date, time: values.time }]);
         formik.setSubmitting(false);
-        alert("Reservation Succeed");
         formik.resetForm();
+        alert("Reservation Succeed");
     },
   });
 
   return (
     <form onSubmit={formik.handleSubmit} className='grid'>
-      <label htmlFor="date" className='date'>Date:
-        <input type="date" {...formik.getFieldProps('date')} />
+      <label htmlFor="date" for="date" className='date'>Date:
+        <input type="date" id="date" {...formik.getFieldProps('date')} />
         {formik.touched.date && formik.errors.date ? (
           <div>{formik.errors.date}</div>
         ) : null}
       </label>
 
-      <label htmlFor="time" className='time'>Time:
-        <select {...formik.getFieldProps('time')}>
+      <label htmlFor="time" for='time' className='time'>Time:
+        <select id='time' {...formik.getFieldProps('time')}>
         <option key="select" value="select">
                 select
         </option>
@@ -89,16 +89,16 @@ const timeOptions = [
       </label>
 
 
-      <label htmlFor="guests" className='guests'>Number of Guests:
-        <input type="number" {...formik.getFieldProps('guests')} min="1" max="10" />
+      <label htmlFor="guests" for='guests' className='guests'>Number of Guests:
+        <input type="number" id='guests' {...formik.getFieldProps('guests')} min="1" max="10" />
         {formik.touched.guests && formik.errors.guests ? (
           <div>{formik.errors.guests}</div>
         ) : null}
       </label>
 
 
-      <label htmlFor="table" className='table'>Table:
-        <select {...formik.getFieldProps('table')}>
+      <label htmlFor="table" for='table' className='table'>Table:
+        <select id='table' {...formik.getFieldProps('table')}>
           {tableOptions.map((option) => (
             <option key={option.value} value={option.value}>
               {option.label}
@@ -110,7 +110,7 @@ const timeOptions = [
       </label>
 
       <h2>How may we contact you?</h2>
-      <label htmlFor="firstName" className='FirstName'>First Name
+      <label htmlFor="firstName" className='FirstName' for="firstName">First Name
         <input
           id="firstName"
           name="firstName"
@@ -120,7 +120,7 @@ const timeOptions = [
         />
       </label>
       {formik.errors.firstName && formik.touched.firstName ? <div className='FnameErr'>{formik.errors.firstName}</div> : null}
-      <label htmlFor="lastName" className='LastName'>Last Name
+      <label htmlFor="lastName" className='LastName' for='lastName'>Last Name
         <input
           id="lastName"
           name="lastName"
@@ -131,7 +131,7 @@ const timeOptions = [
         />
       </label>
       {formik.errors.lastName && formik.touched.lastName ? <div className='LnameErr'>{formik.errors.lastName}</div> : null}
-      <label htmlFor="phoneNumber" className='Phone'>Phone Number
+      <label htmlFor="phoneNumber" className='Phone' for='phoneNumber'>Phone Number
         <input
           id="phoneNumber"
           name="phoneNumber"
